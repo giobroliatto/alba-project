@@ -1,0 +1,795 @@
+/* ----- RESET DO LAYOUT ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* box model: o css usará a distância do conteúdo até a borda, e não até o padding */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none; /* remove o sublinhado dos links */
+}
+
+img {
+  width: 100%; /* ??????? */
+  height: auto; /* ??????? */
+}
+
+/* 
+
+
+*/
+
+/* ----- VARIABLES ----- */
+:root {
+  --header-height: 4.5rem;
+
+  /* colors */
+  --hue: 36; /* YELLOW */
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 100% 57%);
+  --base-color-second: hsl(var(--hue) 94% 79%);
+  --base-color-alt: hsl(27 65% 55%);
+  --base-color-third: hsl(var(--hue) 70% 60%);
+  --title-color: hsl(var(--hue) 55% 12%);
+  --text-color: hsl(0 0% 36%);
+  --text-color-light: hsl(0 0% 96%);
+  --body-color: hsl(0 0% 96%);
+  --body-color-second: hsl(var(--hue) 20% 99%);
+  --header-color: hsl(0 0% 94%);
+
+  /* fonts */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
+}
+
+/* 
+
+
+*/
+
+/* ----- BASE ----- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: 400 1rem var(--body-font); /* rem = pixels/16 */
+  color: var(--text-color);
+  background: var(--body-color);
+  -webkit-font-smoothing: antialiased; /* suavizar a fonte */
+}
+
+.title {
+  font: 700 var(--title-font-size) var(--title-font);
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
+}
+
+.button {
+  background-color: var(--base-color-alt);
+  color: var(--text-color-light);
+  height: 3.5rem;
+  display: inline-flex; /* com inline irá ficar do tamanho do conteúdo, o flex permite alinhar o conteúdo */
+  align-items: center;
+  padding: 0 1rem;
+  border-radius: 0.9rem;
+  transition: background 0.5s; /* delay até a cor do bg mudar ao passar o mouse */
+}
+
+.button:hover {
+  /* muda uma propriedade ao passar o mouse em cima */
+  background: var(--base-color-third);
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 57%, 1) 0%,
+    hsla(var(--hue), 65%, 88%, 0.34) 100%
+  );
+}
+
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsl(210 40% 35%) 0%,
+    hsl(210 40% 90%) 100%
+  );
+}
+
+/* 
+
+
+*/
+/* ----- LAYOUT ----- */
+
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid; /* novas funcionalidades habilitadas, como o "gap" */
+  gap: 2rem; /* distância de 2rem ao final do elemento com a classe .grid e entre os elementos */
+}
+
+.section {
+  padding: 4rem 0; /* 1o elemento se refere cima baixo e o 2o esq e dir */
+}
+
+.section .title {
+  margin-bottom: 1rem;
+}
+
+.section .subtitle {
+  font-size: var(--subtitle-font-size);
+}
+
+.section header {
+  margin-bottom: 1rem;
+}
+
+#header {
+  border-bottom: 1px solid #e4e4e4; /* linha sólida de 1px ao final do header */
+  margin-bottom: 2rem;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--header-color);
+  transition: 0.3s;
+}
+
+header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  transition: 1s;
+}
+
+main {
+  margin-top: 4rem;
+}
+
+/* 
+
+
+*/
+/* ----- LOGO ----- */
+
+.logo {
+  font: 700 1.31rem var(--title-font);
+  color: var(--title-color);
+}
+
+.logo span {
+  color: var(--base-color);
+}
+
+.logo-in-txt {
+  font: 600 1rem var(--title-font);
+  color: var(--base-color);
+}
+
+.logo-in-txt span {
+  color: var(--title-color);
+}
+
+/* 
+
+
+*/
+/* ----- NAVIGATION ----- */
+
+nav {
+  height: 4rem;
+  display: flex; /* colocar um elemento ao lado do outro (irmãos) dentro da seção nav (pai) */
+  justify-content: space-between; /* justifica o conteúdo, nesse caso "space-between" */
+  align-items: center;
+  width: 100%;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: 0.3s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  /* muda uma propriedade ao passar o mouse em cima */
+  color: var(--base-color-alt);
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color-alt);
+
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+}
+
+nav ul li a:hover::after {
+  /* pseude element em nav, ul, li, a, após o hover */
+  width: 100%;
+  transition: width 0.3s;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+
+  top: -15rem;
+  transition: 0.2s;
+}
+
+nav .menu ul {
+  display: none;
+}
+
+/* aqui estamos configurando o menu que irá sobrepor a tela inteira do dispositivo */
+nav.show .menu {
+  /* nav recebe a classe show, e não uma busca por show dentro de nav */
+
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+  height: 100vh; /* vh = viewport height, ou seja, largura do dispositivo em que está aberto */
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: grid; /* libera mais possibilidades */
+  place-content: center;
+}
+
+nav.show .menu ul {
+  display: grid;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
+/* 
+
+
+*/
+
+/* ----- TOGGLE MENU ----- */
+nav .icon-close {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  top: -1.5rem;
+  right: 1.5rem;
+
+  transition: 0.2s;
+}
+
+nav.show div.icon-close {
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
+
+.toggle {
+  color: var(--base-color-alt);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* 
+
+
+*/
+
+/* ----- HOME ----- */
+
+#home {
+  overflow: hidden;
+  background: var(--body-color-second);
+}
+
+#home .container {
+  margin: 0;
+}
+
+#home .image {
+  position: relative; /* ao que?????? */
+  margin-top: 1.5rem;
+  width: 90.35%;
+}
+
+#home .image::before {
+  /* criar elemento fantasma antes do conteúdo */
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -10.8%;
+  right: -11%;
+  z-index: 0;
+  border-radius: 0.5rem;
+}
+
+#home .image img {
+  position: relative; /* ?????? */
+  border-radius: 0.5rem;
+}
+
+#home .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+#home .text p {
+  margin-bottom: 2rem;
+}
+
+#home .text h1 {
+  margin-bottom: 1rem;
+}
+
+/* 
+
+
+*/
+
+/* ----- ABOUT ----- */
+
+#about {
+  overflow: hidden;
+}
+
+#about .container {
+  margin: 0;
+}
+
+#about .image {
+  position: relative;
+  margin-top: 1.5rem;
+  width: 90.35%;
+}
+
+#about .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: hsl(210 40% 79%);
+  position: absolute;
+  top: -10.8%;
+  z-index: 0;
+  border-radius: 0.5rem;
+}
+
+#about .image img {
+  position: relative;
+  border-radius: 0.5rem;
+  right: -11%;
+}
+
+#about .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: justify;
+}
+
+/* 
+
+
+*/
+
+/* ----- SERVICES ----- */
+
+#services {
+  background: var(--body-color-second);
+}
+
+#services .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#services header {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  padding: 2.8rem 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.cardswipe {
+  padding: 2rem 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.cardswipe span {
+  padding: 0.1rem 0.8rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.1rem solid var(--base-color-second);
+  border-radius: 0.2rem;
+}
+
+.card,
+.cardswipe {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+  border-bottom: 0.25rem solid var(--base-color-second);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.card i,
+.cardswipe i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+.card .title,
+.cardswipe .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* .swiper-slide .cardswipe {
+  margin-top: 10rem;
+} */
+
+/* 
+
+
+*/
+
+/* ----- ARTS ----- */
+
+#arts .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#arts header {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: -1rem;
+}
+
+#arts blockquote {
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  border-bottom: 0.15rem solid var(--base-color-second);
+  border-radius: 0.4rem;
+}
+
+#arts blockquote p {
+  margin-bottom: 1.5rem;
+}
+
+#arts blockquote p img {
+  border-radius: 2rem;
+}
+
+#arts cite {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font: 500 1.05rem var(--title-font);
+}
+
+#arts cite img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  clip-path: circle();
+  margin-right: 0.5rem;
+}
+
+/* ----- Config Swiper ----- */
+
+.swiper-slide {
+  height: auto;
+  padding: 2rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--base-color);
+}
+
+/* 
+
+
+*/
+
+/* ----- CONTACT ----- */
+
+#contact {
+  background: var(--body-color-second);
+}
+
+#contact .grid {
+  gap: 4rem;
+}
+
+#contact .text p {
+  margin-bottom: 2rem;
+  text-align: justify;
+  text-indent: 1.5rem;
+}
+
+#contact .button i {
+  font-size: 1rem;
+  margin-right: 0.625rem;
+}
+
+#contact ul.grid {
+  gap: 2rem;
+}
+
+#contact ul li i {
+  font-size: 1.2rem;
+  margin-right: 0.625rem;
+  color: var(--base-color);
+}
+
+#contact .button i {
+  font-size: 1.5rem;
+}
+
+#contact ul li {
+  display: flex;
+  align-items: center;
+}
+
+/* 
+
+
+*/
+
+/* ----- FOOTER ----- */
+
+footer {
+  background: var(--base-color-alt);
+  color: var(--header-color);
+}
+
+footer .logo {
+  display: inline-block; /* por padrão, o display de um elemento <a> é inline, o que não permite adicionar margem ao elemento. utilizando inline-block, é possível usar margin-bottom */
+  color: var(--body-color);
+  margin-bottom: 1.5rem;
+}
+
+footer .logo span {
+  color: hsl(0 0% 8%);
+}
+
+footer .brand p {
+  margin-bottom: 0.8rem;
+}
+
+footer .grid {
+  gap: 2rem;
+}
+
+footer i {
+  font-size: 2rem;
+  color: var(--header-color);
+}
+
+footer .social {
+  grid-auto-flow: column;
+  width: fit-content;
+  margin-bottom: -1rem;
+}
+
+footer .social a {
+  margin-right: 1.5rem;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+footer .social a:hover {
+  transform: translateY(-5px);
+}
+
+footer.section {
+  padding: 4rem 0;
+}
+
+/* 
+
+
+*/
+
+/* ----- RESPONSIVIDADE ----- */
+
+/* propriedade para adaptar a tela para diferentes tamanhos de dispositivos, não só alterando altura/largura, mas também posições */
+
+/* extra large devices: 1200+ (notebook/desktop) */
+@media (min-width: 1200px) {
+  /* reusable classes */
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  #services header,
+  #arts header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* navigation */
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 500 1.15rem var(--body-font);
+  }
+
+  nav ul li a::after {
+    bottom: -1.4rem;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  /* home */
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  #home .image {
+    margin-left: 8rem;
+    width: 70%;
+    order: 1; /* "order" só funciona por estar em uma caixa com grid */
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /* about */
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+    align-items: center;
+    margin-top: 2rem;
+    justify-content: space-between;
+  }
+
+  #about .image {
+    margin-left: 1.5rem;
+  }
+
+  #about .text {
+    padding: 2rem 2rem;
+    margin-right: -0.6rem;
+  }
+
+  /* services */
+  #services .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /*  #services .cardswipe,
+  #services .cards {
+    padding: 20rem 20rem;
+    margin-top: -18rem;
+    margin-bottom: -17rem;
+  } */
+
+  /*   #services .cards {
+    grid-template-columns: 1fr 1fr;
+  } */
+
+  /* arts */
+  #arts .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #arts .art {
+    padding: 18rem 18rem;
+    margin-top: -16rem;
+    margin-bottom: -15rem;
+  }
+
+  /* contact */
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #contact .text {
+    max-width: 25.25rem;
+    margin-left: 1.5rem;
+  }
+
+  #contact .links {
+    margin-right: 1.5rem;
+  }
+
+  /* footer */
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
+
+/* large devices: 992px+ */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+}
+
+/* large devices: 767px > (iPads) */
