@@ -57,7 +57,7 @@ const swiper = new Swiper('.swiper-container', {
   } */
 })
 
-/* carrossel/swiper/slider das arts */
+/* /* /* carrossel/swiper/slider das arts */
 /* const swiper2 = new Swiper('.swiper-container2', {
   slidesPerView: 1,
   pagination: {
@@ -71,6 +71,37 @@ const swiper = new Swiper('.swiper-container', {
     }
   }
 }) */
+
+/* menu ativo ao clicar */
+
+const sections = document.querySelectorAll('main section[id]')
+function activateMenuAtCurrentSection() {
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+
+  for (const section of sections) {
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+    const sectionId = section.getAttribute('id')
+
+    const checkpointStart = checkpoint >= sectionTop
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+    if (checkpointStart && checkpointEnd) {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.add('active')
+    } else {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.remove('active')
+    }
+  }
+}
+
+/* when scroll */
+window.addEventListener('scroll', function () {
+  activateMenuAtCurrentSection()
+})
 
 /* scroll reveal */
 const scrollReveal = ScrollReveal({

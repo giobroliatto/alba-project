@@ -208,7 +208,8 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   /* muda uma propriedade ao passar o mouse em cima */
   color: var(--base-color-alt);
 }
@@ -224,7 +225,8 @@ nav ul li a::after {
   bottom: -1rem;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
   /* pseude element em nav, ul, li, a, após o hover */
   width: 100%;
   transition: width 0.3s;
@@ -639,6 +641,291 @@ footer.section {
 
 /* propriedade para adaptar a tela para diferentes tamanhos de dispositivos, não só alterando altura/largura, mas também posições */
 
+/* large devices: 767px+ (iPads) */
+@media (min-width: 767px) {
+  /* reusable classes */
+  .container {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  #services header,
+  #arts header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* navigation */
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 500 1.15rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav ul li a::after {
+    bottom: -1.4rem;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  /* home */
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  #home .image {
+    margin-left: -3rem;
+    width: 100%;
+    order: 1;
+  }
+
+  #home .button {
+    padding: 0.8rem 0.8rem;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /* about */
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+    align-items: center;
+    margin-top: 2rem;
+    justify-content: space-between;
+  }
+
+  #about .image {
+    margin-left: 1.5rem;
+  }
+
+  #about .text {
+    padding: 2rem 2rem;
+    margin-right: -0.6rem;
+  }
+
+  /* services */
+  #services .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* arts */
+  #arts .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #arts .art {
+    padding: 5rem 5rem;
+    margin-top: -3rem;
+    margin-bottom: -2rem;
+  }
+
+  /* contact */
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #contact .text {
+    max-width: 25.25rem;
+    margin-left: 1.5rem;
+  }
+
+  #contact .links {
+    margin-right: 1.5rem;
+  }
+
+  /* footer */
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
+
+/* large devices: 992px+ */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+
+  /* reusable classes */
+  .container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  #services header,
+  #arts header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* navigation */
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 500 1.15rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav ul li a::after {
+    bottom: -1.4rem;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  /* home */
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  #home .image {
+    margin-left: 2rem;
+    width: 80%;
+    order: 1;
+  }
+
+  #home .button {
+    padding: 0.8rem 0.8rem;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /* about */
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+    align-items: center;
+    margin-top: 2rem;
+    justify-content: space-between;
+  }
+
+  #about .image {
+    margin-left: 1.5rem;
+  }
+
+  #about .text {
+    padding: 2rem 2rem;
+    margin-right: -0.6rem;
+  }
+
+  /* services */
+  #services .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* arts */
+  #arts .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #arts .art {
+    padding: 5rem 5rem;
+    margin-top: -3rem;
+    margin-bottom: -2rem;
+  }
+
+  /* contact */
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #contact .text {
+    max-width: 25.25rem;
+    margin-left: 1.5rem;
+  }
+
+  #contact .links {
+    margin-right: 1.5rem;
+  }
+
+  /* footer */
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
+
 /* extra large devices: 1200+ (notebook/desktop) */
 @media (min-width: 1200px) {
   /* reusable classes */
@@ -674,6 +961,7 @@ footer.section {
 
   nav .menu ul li a.title {
     font: 500 1.15rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
   }
 
   nav ul li a::after {
@@ -729,16 +1017,20 @@ footer.section {
     margin-right: auto;
   }
 
-  /*  #services .cardswipe,
-  #services .cards {
-    padding: 20rem 20rem;
-    margin-top: -18rem;
-    margin-bottom: -17rem;
-  } */
+  #services .card {
+    width: 54rem;
+    /* margin-left: 24rem; */
+  }
 
-  /*   #services .cards {
-    grid-template-columns: 1fr 1fr;
-  } */
+  #services .cardswipe {
+    width: 35rem;
+    /* margin-left: 23rem; */
+  }
+
+  #services .side {
+    display: flex;
+    align-items: flex-start;
+  }
 
   /* arts */
   #arts .container {
@@ -747,9 +1039,9 @@ footer.section {
   }
 
   #arts .art {
-    padding: 18rem 18rem;
-    margin-top: -16rem;
-    margin-bottom: -15rem;
+    padding: 21rem 21rem;
+    margin-top: -19rem;
+    margin-bottom: -18rem;
   }
 
   /* contact */
@@ -783,13 +1075,3 @@ footer.section {
     font-size: 2.25rem;
   }
 }
-
-/* large devices: 992px+ */
-@media (min-width: 992px) {
-  :root {
-    --title-font-size: 2.25rem;
-    --subtitle-font-size: 1.125rem;
-  }
-}
-
-/* large devices: 767px > (iPads) */
