@@ -12,7 +12,7 @@ There are plenty different modules on this event, like Flutter, React, Node.js..
 ## Alba :art:
 
 <h1 align="center">
-    <img alt="Alba Logo" title="Alba Logo" src="./assets/imgs/alba-logo.png" width="300px"/>
+    <img alt="Alba Logo" title="Alba Logo" src="./assets/icons/alba-logo.svg" width="300px"/>
 </h1>
 
 The alba atelier is a creative studio, owned by [@estudioalba](https://www.instagram.com/estudioalba/), which offers several art and architecture services.
