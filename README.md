@@ -20,6 +20,8 @@ The alba atelier is a creative studio, owned by [@estudioalba](https://www.insta
 All the HTML, CSS and JavaScript were made by me and [Mayk Brito](https://github.com/maykbrito), one of the educators from Rocketseat.
 This website was designed to be visually pleasing and to have an easier way to know more about the atelier, as well as expose some of the works and ease contact.
 
+The code contains several HTML, CSS and JavaScript features to beautify, facilitate and complement the website, such as CSS transitions, swiper effects for two ore more boxes, a system to reveal the content as you scroll the page and many other elements to let the page prettier.
+
 ## Showcase :tv:
 
 Designed to fit in any screen size, the website works perfectly and maintains its dimensions both on smartphones and tablets, as well as notebooks and desktops!
