@@ -1,42 +1,56 @@
-<h1 align="center">
-    <img alt="NextLevelWeek" title="NLW Logo" src="./assets/icons/nlw-logo.svg" width="225px"/>
-</h1>
+<div align="center">
 
-# Rocketseat's NextLevelWeek #06 :rocket:
+<img src="./assets/icons/alba-logo.svg" width="260" alt="Alba logo" />
 
-This online event, hosted by [Rocketseat](https://rocketseat.com.br/)'s team, happened between July 21 and 27, 2021. 
-The focus was create an application from the beggining, fully functional and ready for user's use.
+# Alba
 
-There are plenty different modules on this event, like Flutter, React, Node.js... and this project was about HTML, CSS and JavaScript.
+**Responsive website for an art and architecture studio, built during Rocketseat's NLW #06.**
 
-## Alba :art:
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-<h1 align="center">
-    <img alt="Alba Logo" title="Alba Logo" src="./assets/icons/alba-logo.svg" width="300px"/>
-</h1>
+**[See it live](https://giobroliatto.github.io/alba-project/)**
 
-The alba atelier is a creative studio, owned by [@estudioalba](https://www.instagram.com/estudioalba/), which offers several art and architecture services.
+</div>
 
-All the HTML, CSS and JavaScript were made by me and [Mayk Brito](https://github.com/maykbrito), one of the educators from Rocketseat.
-This website was designed to be visually pleasing and to have an easier way to know more about the atelier, as well as expose some of the works and ease contact.
+**English** · [Português](README.pt-BR.md)
 
-The code contains several HTML, CSS and JavaScript features to beautify, facilitate and complement the website, such as CSS transitions, swiper effects for two ore more boxes, a system to reveal the content as you scroll the page and many other elements to let the page prettier.
+> [!NOTE]
+> Built during [Rocketseat](https://www.rocketseat.com.br/)'s **Next Level Week #06** (July 21–27, 2021), in the HTML, CSS and JavaScript track, following the classes by [Mayk Brito](https://github.com/maykbrito). The site content is in Portuguese.
 
-## Showcase :tv:
+---
 
-Designed to fit in any screen size, the website works perfectly and maintains its dimensions both on smartphones and tablets, as well as notebooks and desktops!
+## About
 
-### Web :desktop_computer:
+A website for Alba atelier ([@estudioalba](https://www.instagram.com/estudioalba/)), a creative studio offering art and architecture services. The goal was a pleasant, easy way to learn about the studio, browse some of its work and get in touch.
 
-<h1 align="center">
-    <img alt="NextLevelWeek" title="NLW Logo" src="./assets/imgs/alba-ss1.PNG" width="800px"/>
-</h1>
+## Highlights
 
-### Mobile :iphone:
+- **Responsive layout** that adapts from phones to desktops.
+- **Content revealed on scroll** with ScrollReveal.
+- **Services carousel** with Swiper.
+- **Mobile menu,** a header that changes on scroll, and the menu highlighting the section currently on screen.
+- **CSS transitions** throughout the page.
 
-<h1 align="center">
-  <img src="https://media.giphy.com/media/cqSPmEoeIJcAtrL0vp/giphy.gif" />
- </h1>
- 
- #### <h3 align="center">You can check the website [here](https://giobroliatto.github.io/alba-project/)</h3>
- 
+## Preview
+
+<div align="center">
+
+<img src="./assets/imgs/alba-ss1.PNG" width="800" alt="Desktop version" />
+
+<img src="https://media.giphy.com/media/cqSPmEoeIJcAtrL0vp/giphy.gif" alt="Mobile version" />
+
+</div>
+
+## Running locally
+
+No build step: clone the repository and open `index.html` in your browser.
+
+---
+
+## Author
+
+Made by **Giovani Broliatto** during NLW #06, with classes from [Rocketseat](https://www.rocketseat.com.br/).
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-giobroliatto-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/giobroliatto/)
